@@ -27,18 +27,57 @@ public class NumberSystemConverter {
         } while (!(radix >= 2 && radix <= 10 || radix == 16));
         return radix;
     }
-    int getNumber(int radix) {
-        System.out.print("Enter the number in number system with radix " + radix + ": ");
-        return input.nextInt(radix);
-    }
     public void toDecimal() {
         int radix = getRadix();
-        int number = getNumber(radix);
+        System.out.print("Enter the number in number system with radix " + radix + ": ");
+        int number = input.nextInt(radix);
         System.out.println("The number converted to decimal system is " + number);
     }
     public void fromDecimal() {
-        int number = getNumber(10);
+        System.out.print("Enter the decimal number: ");
+        int number = input.nextInt();
         int radix = getRadix();
         System.out.println("The number converted to number system with radix " + radix + " is " + Integer.toString(number, radix));
+    }
+
+    public int getFirstNumber(int radix) {
+        System.out.print("Enter the first number in number system with radix " + radix + ": ");
+        return input.nextInt(radix);
+    }
+    public int getSecondNumber(int radix) {
+        System.out.print("Enter the second number in number system with radix " + radix + ": ");
+        return input.nextInt(radix);
+    }
+    public void addNumbers() {
+        int radix = getRadix();
+        int number1 = getFirstNumber(radix);
+        int number2 = getSecondNumber(radix);
+        int sum = number1 + number2;
+        System.out.println(Integer.toString(number1, radix) + " + " + Integer.toString(number2, radix) + " = " + Integer.toString(sum, radix));
+    }
+    public void subtractNumbers() {
+        int radix = getRadix();
+        int number1 = getFirstNumber(radix);
+        int number2 = getSecondNumber(radix);
+        int subtraction = number1 - number2;
+        System.out.println(Integer.toString(number1, radix) + " - " + Integer.toString(number2, radix) + " = " + Integer.toString(subtraction, radix));
+    }
+    public void multiplyNumbers() {
+        int radix = getRadix();
+        int number1 = getFirstNumber(radix);
+        int number2 = getSecondNumber(radix);
+        int sum = number1 * number2;
+        System.out.println(Integer.toString(number1, radix) + " * " + Integer.toString(number2, radix) + " = " + Integer.toString(sum, radix));
+    }
+    public void divideNumbers() {
+        int radix = getRadix();
+        int number1 = getFirstNumber(radix);
+        int number2 = getSecondNumber(radix);
+        if (number2 == 0) {
+            System.out.println("The second number cannot be zero because you cannot divide by zero");
+            return;
+        }
+        int sum = number1 / number2;
+        System.out.println(Integer.toString(number1, radix) + " / " + Integer.toString(number2, radix) + " = " + Integer.toString(sum, radix));
     }
 }
