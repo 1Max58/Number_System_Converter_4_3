@@ -10,7 +10,11 @@ public class Main {
             operation = converter.chooseOperation();
             switch (operation) {
                 case "A":
+                    converter.toDecimal();
+                    break;
                 case "B":
+                    converter.fromDecimal();
+                    break;
                 case "C":
                 case "D":
                 case "E":
